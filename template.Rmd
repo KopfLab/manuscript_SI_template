@@ -1,0 +1,44 @@
+---
+title: "Analysis: NAME"
+subtitle: "SUBTITLE"
+author: "AUTHORS"
+date: "`r format(Sys.Date(), '%d %b %Y')`"
+output:
+  html_document: 
+    df_print: paged
+    css: stylesheet.css
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+    toc_float: true
+    toc_depth: 3
+    code_folding: show
+editor_options:
+  chunk_output_type: inline
+---
+
+```{r setup, echo = FALSE, message=FALSE, warning=FALSE}
+# load libraries
+library(tidyverse) 
+
+# set global chunk options for figure output
+figure_prefix <- "PREFIX-"
+knitr::opts_chunk$set(
+  dev=c("png", "pdf"), dev.args=list(pdf = list(encoding="WinAnsi", useDingbats=FALSE)),
+  fig.keep="all", fig.path=file.path("figures", figure_prefix))
+```
+
+# Header A
+
+```{r}
+cars
+```
+
+# Header B
+
+## Subheader C
+
+```{r "cars", fig.width = 8, fig.height = 6}
+cars %>% ggplot() + aes(speed, dist) + geom_point()
+```
+
