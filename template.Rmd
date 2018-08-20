@@ -61,7 +61,8 @@ iris %>%
   geom_point() +
   scale_color_discrete(labels = latex_labeller) +
   facet_wrap(~latex_species, labeller = latex_labeller) +
-  labs(x = TeX("my x axis $\\delta^{42}X\\,\\[\U2030\\]$"))
+  labs(x = TeX("my x axis $\\delta^{42}X\\,\\[\U2030\\]$")) + 
+  theme_figure(text_size = 16)
 ```
 
 
